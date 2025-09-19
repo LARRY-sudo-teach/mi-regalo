@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para mi más grande amor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="flores"></div>
+
+  <!-- Pantalla inicial -->
+  <div id="inicio">
+    <h1>Para mi más grande amor, Deyxyrett ❤️</h1>
+    <p>Haz clic aquí si crees en el amor 💘</p>
+    <button id="btnSorpresa">Entrar a la sorpresa</button>
+  </div>
+
+  <!-- Contenedor de la galería (oculto al inicio) -->
+  <div id="galeria" style="display:none;">
+    <h1>Quisiera recordarte que.... 🌹</h1>
+    <div id="botones"></div>
+    <img id="imagen" src="" alt="Foto especial">
+    <p id="mensaje">puedes pulsar cualquier numero y tambien donde dice mensagito varias veces para mas palabras de mi parte mi amorcito ❤️</p>
+
+    <!-- Botón secreto -->
+    <button id="btnSecreto">💌 mensagito </button>
+    <p id="mensajeSecreto" style="display:none;"></p>
+  </div>
+
+  <!-- Contenedor para animación final -->
+  <div id="animacion"></div>
+
+  <!-- Música -->
+  <audio id="player" autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    // Botón para mostrar la galería
+    document.getElementById("btnSorpresa").addEventListener("click", () => {
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("galeria").style.display = "block";
+      mostrarFoto(0); // mostrar la primera foto
+    });
+
+    // Forzar música si el navegador la bloquea
+    document.addEventListener("click", () => {
+      const audio = document.getElementById("player");
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>

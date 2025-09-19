@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galería para mi amor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- animaciones flotantes -->
+  <div id="flores"></div>
+
+  <!-- controles superiores -->
+  <header class="topbar">
+    <div class="left">
+      <button id="musicToggle" aria-label="pausar/reanudar música">⏸️</button>
+      <button id="downloadMsg" title="Descargar mensaje">💾</button>
+    </div>
+
+    <!-- botón secreto (pequeño corazón) -->
+    <div class="right">
+      <button id="secretBtn" class="secret" title="Presiona 3 veces">❤</button>
+    </div>
+  </header>
+
+  <main id="contenedor">
+    <h1>Quisiera recordarte que.... 🌹</h1>
+
+    <div id="botones" aria-label="selección de fotos">
+      <button onclick="mostrarFoto(0)">1</button>
+      <button onclick="mostrarFoto(1)">2</button>
+      <button onclick="mostrarFoto(2)">3</button>
+      <button onclick="mostrarFoto(3)">4</button>
+      <button onclick="mostrarFoto(4)">5</button>
+      <button onclick="mostrarFoto(5)">6</button>
+      <button onclick="mostrarFoto(6)">7</button>
+      <button onclick="mostrarFoto(7)">8</button>
+      <button onclick="mostrarFoto(8)">9</button>
+      <button onclick="mostrarFoto(9)">10</button>
+    </div>
+
+    <!-- contenedor de imagen con transición -->
+    <div class="photo-container" id="photoContainer">
+      <img id="imagen" src="" alt="Foto especial" />
+    </div>
+
+    <p id="mensaje">Aquí irá el mensaje romántico ❤️</p>
+  </main>
+
+  <!-- modal sorpresa -->
+  <div id="modal" class="hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="closeModal" class="close">✕</button>
+      <h2>¡Sorpresa, Deixyrett! 💖</h2>
+      <p id="modalText">Mi amor por ti no puede expresarse solamente en  palabras...</p>
+      <div id="confettiZone"></div>
+    </div>
+  </div>
+
+  <!-- música -->
+  <audio id="musica" autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

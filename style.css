@@ -1,0 +1,132 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 36px;
+  color: #ff66cc;
+  text-shadow: 0 0 12px #ff0099;
+}
+
+#botones {
+  margin: 30px 0;
+}
+
+#botones button {
+  margin: 10px;
+  padding: 15px 30px;
+  background-color: #ff3399;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff0099;
+  transition: transform 0.2s, background-color 0.3s;
+}
+#botones button:hover {
+  background-color: #ff66cc;
+  transform: scale(1.1);
+}
+
+#imagen {
+  display: block;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff0099;
+}
+
+#mensaje {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff66cc;
+  text-align: center;
+  text-shadow: 0 0 8px #ff0099;
+}
+
+/* Botón secreto */
+#btnSecreto {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #ff3399;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff0099;
+}
+#btnSecreto:hover {
+  background-color: #ff66cc;
+  transform: scale(1.05);
+}
+
+/* Mensaje secreto estilo máquina */
+#mensajeSecreto {
+  margin-top: 15px;
+  color: #ff99ff;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff33cc;
+  border-right: 2px solid #ff99ff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: cursor 0.8s infinite;
+}
+@keyframes cursor {
+  0% { border-color: #ff99ff; }
+  50% { border-color: transparent; }
+  100% { border-color: #ff99ff; }
+}
+
+/* Animación flores y corazones */
+#flores {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.flor {
+  position: absolute;
+  font-size: 30px;
+  animation: caer 10s linear infinite;
+}
+@keyframes caer {
+  from { transform: translateY(-10%); }
+  to { transform: translateY(120vh); }
+}
+
+/* Animación final (foto 10) */
+#animacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+.explosion {
+  position: absolute;
+  font-size: 30px;
+  animation: explotar 2s ease-out forwards;
+}
+@keyframes explotar {
+  0% { transform: scale(0.5); opacity: 1; }
+  50% { transform: scale(2); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
